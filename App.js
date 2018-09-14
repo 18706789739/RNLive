@@ -7,29 +7,25 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View,Alert} from 'react-native';
+import {StyleSheet, Text, View,Alert} from 'react-native';
 import KSYVideo from 'react-native-ksyvideo';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import { Provider } from 'react-redux';
+import configStore from './src/redux/store';
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
 
   loadStart(){
-    Alert.alert('标题内容','正在3加载中```');
+    Alert.alert('标题内容','正在66中```');
   }
 
   render() {
 
     return (
+      <Provider store={configStore}>
       <View style={styles.container}>
       
-      <Text>6266</Text>
+      <Text>626236</Text>
         
       <Text>8888</Text>
       <KSYVideo source={{uri: "http://wsflv.upliveapp.com/ws/1_8-338257824503037952075516aaf_8-4285380654117421056fbb89867_1.flv"}}   // Can be a URL or a local file.
@@ -53,6 +49,7 @@ export default class App extends Component<Props> {
        style={styles.backgroundVideo} />
       
       </View>
+      </Provider>
     );
   }
 }
