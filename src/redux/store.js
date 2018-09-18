@@ -6,9 +6,11 @@ const middlewares = [
   thunkMiddleware,
 ]
 
-// export default function configStore () {
-//   const store = createStore(rootReducer, applyMiddleware(...middlewares))
-//   return store
-// }
+function configStore () {
+  const store = createStore(rootReducer, applyMiddleware(...middlewares))
+  return store
+}
 
-export default createStore(rootReducer, applyMiddleware(...middlewares));
+const store = configStore();
+
+export default store;

@@ -1,6 +1,9 @@
 // 原始默认state
 const defaultState = {
-    music: {},
+    music: {
+      a:2,
+      b:3
+    },
 }
 
 const SET_MUSIC_ONINDEX = 'SET_MUSIC_ONINDEX';
