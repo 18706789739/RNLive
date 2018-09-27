@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
-import {View,Text,Alert,StyleSheet,Button} from 'react-native';
-import KSYVideo from 'react-native-ksyvideo';
+import {View,Text,Alert,StyleSheet,WebView} from 'react-native';
+import CookieManager from 'react-native-cookies';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux'
 
 export class Game extends Component {
     componentWillMount(){
-        //this.props.navigation.navigate('Login', { name: 'Brent' })
+        CookieManager.get('http://999775_vip.mayks.cn/Register')
+        .then((res) => {
+            console.log('CookieManager.get =>', res); // => 'user_session=abcdefg; path=/;'
+        });
     }
     loadStart = ()=>{
         //Alert.alert('加载中```')
@@ -19,25 +22,11 @@ export class Game extends Component {
     };
     render(){
         return (
-            <KSYVideo source={{uri: ""}}   // Can be a URL or a local file.
-       ref={(ref) => {
-         this.player = ref
-       }}                                      // Store reference
-  
-       volume={1.0}                            
-       muted={false}                           
-       paused={false}                          // Pauses playback entirely.
-       resizeMode="cover"                      // Fill the whole screen at aspect ratio.*
-       repeat={true}                           // Repeat forever.
-       playInBackground={false}                // Audio continues to play when app entering background.
-       progressUpdateInterval={250.0}          // Interval to fire onProgress (default to ~250ms)
-       onLoadStart={this.loadStart}            // Callback when video starts to load
-       onError={this.videoError}               // Callback when video cannot be loaded
-    //    onLoad={this.setDuration}               // Callback when video loads
-    //    onProgress={this.setTime}               // Callback every ~250ms with currentTime
-    //    onEnd={this.onEnd}                      // Callback when playback finishes
-    //    onBuffer={this.onBuffer}                // Callback when remote video is buffering
-       style={styles.backgroundVideo} />
+            <View style={{flex:1}}>
+            <WebView source={{uri:'http://999775_vip.mayks.cn/Register'}}>
+
+            </WebView>
+            </View>    
        
         )
     }

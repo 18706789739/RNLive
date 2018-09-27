@@ -1,16 +1,21 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware ,combineReducers} from 'redux'
 import thunkMiddleware from 'redux-thunk'
-import rootReducer from './reducers'
+
+import musicPlayer from './testReducer';
+import Login from './loginReducer';
 
 const middlewares = [
   thunkMiddleware,
 ]
 
+const rootReducer = combineReducers({
+  musicPlayer,
+  Login,
+});
+
 function configStore () {
-  const store = createStore(rootReducer, applyMiddleware(...middlewares))
+  const store = createStore( rootReducer, applyMiddleware(...middlewares))
   return store
 }
 
-const store = configStore();
-
-export default store;
+export default configStore;

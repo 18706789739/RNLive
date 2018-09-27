@@ -1,8 +1,9 @@
 
-var Dimensions = require('Dimensions');
-var ScreenWidth = Dimensions.get('window').width;
-
-export default {
-    ScreenWidth,
-    AppBackgroundColor:'#2e1f31'
+const URL = {
+    login:'http://api.lucky365.xyz/login',
+    register:'http://api.lucky365.xyz/register',
+    validateCode:'http://api.lucky365.xyz/validateCode', //登录注册验证码接口
+}
+export {
+    URL
  };

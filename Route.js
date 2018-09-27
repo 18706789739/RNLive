@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Image} from 'react-native';
+import {StatusBar,Easing,Animated} from 'react-native';
 import TabBarItem from './src/component/TabBarItem';
 import {createStackNavigator, createBottomTabNavigator} from 'react-navigation';
 import Game from './src/pages/Game';
@@ -7,6 +7,12 @@ import Live from './src/pages/Live';
 import Mine from './src/pages/Mine';
 import Login from './src/pages/Login';
 import ClientServer from './src/pages/ClinetServer';
+import ModifyPassword from './src/pages/ModifyPassword';
+import AnchorCollectionList from './src/pages/AnchorCollectionList';
+import MyGrade from './src/pages/MyGrade';
+import MyEarnings from './src/pages/MyEarnings'
+import EarningDetail from './src/pages/EarningDetail'
+import MemberPrivileges from './src/pages/MemberPrivileges'
 
 const BottomTabNavigator = createBottomTabNavigator({
     Mine,
@@ -17,6 +23,21 @@ const BottomTabNavigator = createBottomTabNavigator({
     /* 主屏幕的标题配置现在在这里 */
     //headerMode: 'none',
     navigationOptions: ({navigation}) => ({
+        tabBarOnPress:(navigation)=>{
+            
+            const routeName = navigation.navigation.state.routeName;
+            
+            switch (routeName){
+                case 'Mine':
+                StatusBar.setBackgroundColor('rgb(232,54,38)',true);
+                break;
+                default:
+                break;
+            }
+
+            navigation.defaultHandler()
+
+        },
         tabBarIcon:({focused}) => {
             
             let normalImage;
@@ -71,9 +92,13 @@ const RootStack = createStackNavigator({
             header: null,
         }
     },
-    Login:{
-        screen: Login
-    }
+    Login:{screen: Login},
+    ModifyPassword:{screen:ModifyPassword},
+    AnchorCollectionList:{screen:AnchorCollectionList},
+    MyGrade:{screen:MyGrade},
+    MyEarnings:{screen:MyEarnings},
+    EarningDetail:{screen:EarningDetail},
+    MemberPrivileges:{screen:MemberPrivileges},
 }, {
     /* 主屏幕的标题配置现在在这里 */
     //headerMode: 'none',
@@ -81,14 +106,37 @@ const RootStack = createStackNavigator({
     navigationOptions: ({navigation}) => ({
         title: navigation.state.routeName,
         headerStyle: {
-            backgroundColor: '#ef4d3e',
+            backgroundColor: 'rgb(232,54,38)',
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
             fontWeight: 'bold',
         },
-        headerLayoutPreset:'center',
-    })
+    }),
+    transitionConfig: () => ({
+        transitionSpec: {
+            duration: 300,
+            easing: Easing.out(Easing.poly(4)),
+            timing: Animated.timing,
+        },
+        screenInterpolator: sceneProps => {
+            const {layout, position, scene} = sceneProps;
+            const {index} = scene;
+            const Width = layout.initWidth;
+            //沿X轴平移
+            const translateX = position.interpolate({
+                inputRange: [index - 1, index, index + 1],
+                outputRange: [Width, 0, -(Width - 10)],
+            });
+            //透明度
+            const opacity = position.interpolate({
+                inputRange: [index - 1, index - 0.99, index],
+                outputRange: [0, 1, 1],
+            });
+            return {opacity, transform: [{translateX}]};
+        }
+
+      }),
 });
 
 export default RootStack;
