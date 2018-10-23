@@ -19,7 +19,7 @@ export default class Mine extends Component {
         }
     }
     componentWillMount(){
-        this.props.navigation.navigate('MemberPrivileges', { name: 'Brent' })
+        this.props.navigation.navigate('LiveGirls', { name: 'Brent' })
     }
     static navigationOptions = {
         title: '个人中心', // 设置头部标题

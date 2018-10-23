@@ -137,6 +137,7 @@ android {
 }
 
 dependencies {
+    compile project(':@remobile_react-native-marquee-label')
     compile project(':react-native-cookies')
     compile project(':react-native-linear-gradient')
     compile project(':react-native-ksyvideo')

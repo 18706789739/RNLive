@@ -3,6 +3,7 @@ package com.rnlive;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.remobile.marqueeLabel.RCTMarqueeLabelPackage;
 import com.psykar.cookiemanager.CookieManagerPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.ksyun.media.reactnative.ReactKSYVideoPackage;
@@ -26,6 +27,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RCTMarqueeLabelPackage(),
             new CookieManagerPackage(),
             new LinearGradientPackage(),
             new ReactKSYVideoPackage()

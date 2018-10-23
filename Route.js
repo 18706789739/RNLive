@@ -13,6 +13,7 @@ import MyGrade from './src/pages/MyGrade';
 import MyEarnings from './src/pages/MyEarnings'
 import EarningDetail from './src/pages/EarningDetail'
 import MemberPrivileges from './src/pages/MemberPrivileges'
+import LiveGirls from './src/pages/LiveGirls'
 
 const BottomTabNavigator = createBottomTabNavigator({
     Mine,
@@ -99,6 +100,7 @@ const RootStack = createStackNavigator({
     MyEarnings:{screen:MyEarnings},
     EarningDetail:{screen:EarningDetail},
     MemberPrivileges:{screen:MemberPrivileges},
+    LiveGirls:{screen:LiveGirls}
 }, {
     /* 主屏幕的标题配置现在在这里 */
     //headerMode: 'none',

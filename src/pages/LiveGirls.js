@@ -9,7 +9,7 @@ import {
     Dimensions
 } from 'react-native';
 
-export default class Live extends Component {
+export default class LiveGirls extends Component {
     static navigationOptions =  ({ nasvigation }) =>({
         title: '直播大厅',
     });
