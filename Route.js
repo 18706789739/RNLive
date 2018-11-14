@@ -14,6 +14,8 @@ import MyEarnings from './src/pages/MyEarnings'
 import EarningDetail from './src/pages/EarningDetail'
 import MemberPrivileges from './src/pages/MemberPrivileges'
 import LiveGirls from './src/pages/LiveGirls'
+import SearchAnchor from './src/pages/SearchAnchor'
+import AboutUs from './src/pages/AboutUs'
 
 const BottomTabNavigator = createBottomTabNavigator({
     Mine,
@@ -100,7 +102,9 @@ const RootStack = createStackNavigator({
     MyEarnings:{screen:MyEarnings},
     EarningDetail:{screen:EarningDetail},
     MemberPrivileges:{screen:MemberPrivileges},
-    LiveGirls:{screen:LiveGirls}
+    LiveGirls:{screen:LiveGirls},
+    SearchAnchor:{screen:SearchAnchor},
+    AboutUs:{screen:AboutUs}
 }, {
     /* 主屏幕的标题配置现在在这里 */
     //headerMode: 'none',

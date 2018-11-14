@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Swiper from 'react-native-swiper';
 import {
     View,Text,Image,
-    StatusBar,
     TouchableOpacity,
     ScrollView,
     StyleSheet,
@@ -26,38 +25,7 @@ export default class Live extends Component {
                     <View style={styles.liveItem}>
                         <TouchableOpacity onPress={console.log(6)}>
                             <Text style={styles.liveItemTitle}>666秀场</Text>
-                            <Image style={styles.liveItemImg} source={{uri:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3336905577,2525397483&fm=11&gp=0.jpg'}} />
-                            <Text style={styles.liveItemNum}>直播人数：99</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.liveItem}>
-                        <TouchableOpacity onPress={console.log(6)}>
-                            <Text style={styles.liveItemTitle}>666秀场</Text>
-                            <Image style={styles.liveItemImg} source={{uri:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3336905577,2525397483&fm=11&gp=0.jpg'}} />
-                            <Text style={styles.liveItemNum}>直播人数：99</Text>
-                        </TouchableOpacity>
-                    </View><View style={styles.liveItem}>
-                        <TouchableOpacity onPress={console.log(6)}>
-                            <Text style={styles.liveItemTitle}>666秀场</Text>
-                            <Image style={styles.liveItemImg} source={{uri:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3336905577,2525397483&fm=11&gp=0.jpg'}} />
-                            <Text style={styles.liveItemNum}>直播人数：99</Text>
-                        </TouchableOpacity>
-                    </View><View style={styles.liveItem}>
-                        <TouchableOpacity onPress={console.log(6)}>
-                            <Text style={styles.liveItemTitle}>666秀场</Text>
-                            <Image style={styles.liveItemImg} source={{uri:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3336905577,2525397483&fm=11&gp=0.jpg'}} />
-                            <Text style={styles.liveItemNum}>直播人数：99</Text>
-                        </TouchableOpacity>
-                    </View><View style={styles.liveItem}>
-                        <TouchableOpacity onPress={console.log(6)}>
-                            <Text style={styles.liveItemTitle}>666秀场</Text>
-                            <Image style={styles.liveItemImg} source={{uri:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3336905577,2525397483&fm=11&gp=0.jpg'}} />
-                            <Text style={styles.liveItemNum}>直播人数：99</Text>
-                        </TouchableOpacity>
-                    </View><View style={styles.liveItem}>
-                        <TouchableOpacity onPress={console.log(6)}>
-                            <Text style={styles.liveItemTitle}>666秀场</Text>
-                            <Image style={styles.liveItemImg} source={{uri:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3336905577,2525397483&fm=11&gp=0.jpg'}} />
+                                <Image style={styles.liveItemImg} source={{uri:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3336905577,2525397483&fm=11&gp=0.jpg'}} />
                             <Text style={styles.liveItemNum}>直播人数：99</Text>
                         </TouchableOpacity>
                     </View>
@@ -81,12 +49,9 @@ const styles = StyleSheet.create({
         marginBottom:13,
     },
     liveItem:{
-        flexBasis:'33.3%',
+        flexBasis:'50%',
         flexShrink:0,
         padding:5,
-        borderColor:'rgb(230,230,230)',
-        borderRightWidth:1,
-        borderBottomWidth:1,
     },
     liveItemNum:{
         height:10,
@@ -106,7 +71,6 @@ const styles = StyleSheet.create({
         marginLeft:12,
         marginRight:12,
         flexDirection:'row',
-        justifyContent:'center',
         flexWrap:'wrap',
         borderLeftWidth:1,
         borderColor:'rgb(230,230,230)',

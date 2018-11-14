@@ -29,7 +29,8 @@ export default class TextInputItem extends Component {
             rightButton,
             rightButtonHandle,
             codeUrl,
-            codeChange
+            codeChange,
+            reInputStyles
         } = this.props;
 
         let  {
@@ -47,7 +48,7 @@ export default class TextInputItem extends Component {
                 {title?<View style={styles.inputTitle}><Text style={{color: "#999999"}}>{title}</Text></View>:null}
 
                 <TextInput
-                    style={styles.input}
+                    style={[styles.input,reInputStyles?reInputStyles:{}]}
                     onChangeText={onChange}
                     value={value}
                     secureTextEntry={secureText?secureText:false}

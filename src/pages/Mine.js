@@ -19,11 +19,11 @@ export default class Mine extends Component {
         }
     }
     componentWillMount(){
-        this.props.navigation.navigate('LiveGirls', { name: 'Brent' })
+        this.props.navigation.navigate('ShareCode', { name: 'Brent' })
     }
     static navigationOptions = {
         title: '个人中心', // 设置头部标题
-      };
+    };
     render(){
         return (
             <ScrollView>
