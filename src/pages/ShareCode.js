@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {
     View,Image,Text
 } from 'react-native';
+import UShare from '../share/share';  
+import SharePlatform from '../share/SharePlatform';  
 
 export default class ShareCode extends Component {
 
@@ -9,6 +11,8 @@ export default class ShareCode extends Component {
         title: '分享二维码',
     });
 
+    componentWillMount(){
+    }
     render(){
         return (
             <View style={{flex:1}}>

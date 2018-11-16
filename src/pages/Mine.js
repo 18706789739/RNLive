@@ -19,6 +19,7 @@ export default class Mine extends Component {
         }
     }
     componentWillMount(){
+        console.log(this.props.navigation);
         this.props.navigation.navigate('ShareCode', { name: 'Brent' })
     }
     static navigationOptions = {
